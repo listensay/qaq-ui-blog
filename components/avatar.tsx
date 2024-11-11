@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { memo } from 'react';
 
 interface Props {
   size: number;
@@ -17,4 +18,4 @@ function avatar(props: Props) {
   );
 }
 
-export default avatar;
+export default memo(avatar);

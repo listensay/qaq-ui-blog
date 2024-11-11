@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 interface navbar {
   tabs: tabs[];
 }
@@ -7,11 +9,7 @@ interface tabs {
   to: string;
 }
 
-function changeTab(tab: string) {
-  console.log(tab);
-}
-
-export default function Navbar(props: navbar) {
+function Navbar(props: navbar) {
   const { tabs } = props;
   const currentTab = tabs[0].to;
 
@@ -25,7 +23,6 @@ export default function Navbar(props: navbar) {
                 <li
                   className={`mr-4 cursor-pointer ${currentTab === item.to ? 'text-blue-500' : ''}`}
                   key={item.to}
-                  onClick={() => changeTab(item.to)}
                 >
                   <span>{item.name}</span>
                 </li>
@@ -37,3 +34,5 @@ export default function Navbar(props: navbar) {
     </div>
   );
 }
+
+export default memo(Navbar)

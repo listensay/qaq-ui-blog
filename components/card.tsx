@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 interface Props {
   children: React.ReactNode;
 }
 
-export default function Card(props: Props) {
+function Card(props: Props) {
   return (
     <div className="h-full relative">
       <div className="absolute left-4 top-4 h-full w-full bg-background z-10"></div>
@@ -14,3 +14,6 @@ export default function Card(props: Props) {
     </div>
   );
 }
+
+
+export default memo(Card)
