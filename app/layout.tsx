@@ -15,12 +15,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar
-          tabs={[
-            { name: '主页', to: '/' },
-            { name: '关于我', to: '/about' },
-          ]}
-        />
+        <div className="fixed top-0 w-full">
+          <Navbar
+            tabs={[
+              { name: '主页', to: '/' },
+              { name: '关于', to: '/about' },
+            ]}
+          />
+        </div>
         {children}
       </body>
     </html>
