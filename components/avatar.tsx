@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import { memo } from 'react';
+import Image from 'next/image'
+import { memo } from 'react'
 
 interface Props {
   size: number;
@@ -15,7 +15,7 @@ function avatar(props: Props) {
       height={props.size}
       className={`rounded-full border-4 border-stone-900 ${props.className}`}
     />
-  );
+  )
 }
 
-export default memo(avatar);
+export default memo(avatar)

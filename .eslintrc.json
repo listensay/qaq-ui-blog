@@ -1,3 +1,11 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript", "prettier"],
+  "root": true,
+  "plugins": ["prettier"],
+  "rules": { // 自訂規則
+    "quotes": ["error", "single"], // 使用單引號
+    "no-console": "warn", // 使用 console 時警告提示
+    "vue/multi-word-component-names": "off",
+    "semi": ["error", "never"] // 禁止使用分号
+  }
 }

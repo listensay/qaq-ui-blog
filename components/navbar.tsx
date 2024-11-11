@@ -1,19 +1,19 @@
-'use client';
+'use client'
 
-import { memo, useState } from 'react';
+import { memo, useState } from 'react'
 
 interface navbar {
-  tabs: tabs[];
+  tabs: tabs[]
 }
 
 interface tabs {
-  name: string;
-  to: string;
+  name: string
+  to: string
 }
 
 function Navbar(props: navbar) {
-  const { tabs } = props;
-  const [currentTab, setCurrentTab] = useState(tabs[0].to);
+  const { tabs } = props
+  const [currentTab, setCurrentTab] = useState(tabs[0].to)
 
   return (
     <div className="fixed top-0 w-full flex justify-center items-center px-4 h-20">
@@ -33,13 +33,13 @@ function Navbar(props: navbar) {
                     <div className="absolute w-2 h-2 bg-yellow-400 rounded-full left-0 right-0 -bottom-2 mx-auto border-stone-900 border"></div>
                   )}
                 </li>
-              );
+              )
             })}
           </ul>
         </nav>
       </div>
     </div>
-  );
+  )
 }
 
-export default memo(Navbar);
+export default memo(Navbar)

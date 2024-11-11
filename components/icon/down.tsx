@@ -31,5 +31,5 @@ export default function Down(props: Props) {
         p-id="7545"
       ></path>
     </svg>
-  );
+  )
 }

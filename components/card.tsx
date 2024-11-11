@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo } from 'react'
 
 interface Props {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ function Card(props: Props) {
         {props.children}
       </div>
     </div>
-  );
+  )
 }
 
-export default memo(Card);
+export default memo(Card)
