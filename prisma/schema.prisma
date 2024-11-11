@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "mysql"
+  url       = env("MYSQL_PRISMA_URL") // uses connection pooling
+}
+
+// 文章模型
+model Post {
+  id        Int     @id @default(autoincrement())
+  title     String
+  content   String?
+  published Boolean @default(false)
+  author    User?   @relation(fields: [authorId], references: [id])
+  authorId  Int?
+  cover     String?
+  category  Category? @relation(fields: [categoryId], references: [id])
+  categoryId Int?
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @updatedAt @map(name: "updated_at")
+
+  @@map("posts")
+}
+
+// 用户模型
+model User {
+  id            Int    @id @default(autoincrement())
+  username      String
+  password      String
+  avatar        String?
+  saying        String?
+  nickname      String?
+  email         String?   @unique
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @updatedAt @map(name: "updated_at")
+  posts         Post[]
+  @@map(name: "users")
+}
+
+// 分类模型
+model Category {
+  id    Int    @id @default(autoincrement())
+  name  String
+  posts Post[]
+
+  @@map("categories")
+}
